@@ -39,37 +39,35 @@
 					.caniuse img {max-width:100%;max-height:100%;}
 					.caniuse img + img{position: absolute;left:0;top:0;}
 
-					.fx{display:flex;}
+					.fx,.fxsmpl ul,.fxsmpl p{display:-webkit-box;display:flex;}
+					.aic,.fxsmpl.aic ul{-webkit-box-align:center;align-items:center;}
+					.jcc,.fxsmpl.jcc ul{-webkit-box-pack:center;justify-content:center;}
+					.jcs,.fxsmpl.jcs ul{-webkit-box-pack:justify;justify-content:space-between;}
+					.fx.ex>*,.fxsmpl .f1{-webkit-box-flex:1;flex:1 1 auto;}
+					.fxsmpl .f2{-webkit-box-flex:2;flex:2 1 auto;}
+					.fxsmpl .f1x{-webkit-box-flex:1;flex:1 1 1px;}
+
 					.fx>div{position: relative;}
 					.fx p{font-size:40px;white-space: nowrap;}
 
-					.fx.p01>div{flex:1 1 1px;}
-					.fx.p01 ul{margin:0;list-style: none;}
-					.fx.p01 li{font-size:30px;line-height:1.3;}
-					.fx.p01 li:empty{height: 39px;}
+					.p02>div>div::after{content:"＞";display:block;position:absolute;top:50%;right:0;transform:translateY(-50%)}
+					.p02>div>div:last-child::after{display: none}
+					.p02 p{position: absolute;left:50%;transform:translateX(-50%);}
 
-					.fx.p03{justify-content:space-between; padding:10px;min-width: 30%;margin-top:1.5em;}
-					.fx.p03>div{outline:2px solid skyblue;min-width: 30%;display:flex;align-items:center;justify-content:center;}
-					.fx.p03 h3{position: absolute;width:100%;top:-1.5em;left:0;font-size:40px;}
-					.fx.p03 p{margin-bottom:30px;}
 
-					.fx.p02{justify-content:center;}
-					.fx.p02 > div{flex:1 1 auto;}
-					.fx.p02 > div::after{content:"＞";display:block;position:absolute;top:50%;right:0;transform:translateY(-50%)}
-					.fx.p02 > div:last-child::after{display: none}
-					.fx.p02 p{position: absolute;left:50%;transform:translateX(-50%);}
+					.p01 ul{margin:0;list-style: none;}
+					.p01 li{font-size:30px;line-height:1.3;}
+					.p01 li:empty{height: 39px;}
+
+					.p03>div{padding:10px;margin-top:1.5em;}
+					.p03>div>div{outline:2px solid skyblue;min-width: 30%;}
+					.p03 h3{position: absolute;width:100%;top:-1.5em;left:0;font-size:40px;}
+					.p03 p{margin-bottom:30px;}
 
 
 					.fxsmpl ul{border:10px solid skyblue;width:90%;box-sizing:border-box;margin:auto;}
-					.fxsmpl li{border:10px solid mistyrose;list-style: none;padding:10px;word-wrap:break-word;}
+					.fxsmpl li{border:10px solid mistyrose;list-style: none;padding:10px;word-wrap:break-word;word-break:break-all;}
 					
-					.fxsmpl ul{display:flex;}
-					.fxsmpl.aic ul{align-items:center;}
-					.fxsmpl.jcc ul{justify-content:center;}
-					.fxsmpl.jcs ul{justify-content:space-between;}
-					.fxsmpl .f1{flex:1 1 auto;}
-					.fxsmpl .f2{flex:2 1 auto;}
-					.fxsmpl .f1x{flex:1 1 1px;}
 					
 					.fxsmpl.psd ul::before,
 					.fxsmpl.psd ul::after{display:block;border:10px solid DarkSeaGreen;padding:10px;}
@@ -79,16 +77,12 @@
 					.fxsmpl.txt p{border:10px solid skyblue;width:90%;box-sizing:border-box;margin:auto;}
 					.fxsmpl.txt p span{border:4px solid tomato;}
 					
-					.fxsmpl.txt p{display: flex;}
+					/*.fxsmpl.txt p{display:-webkit-box-flex;display: flex;}*/
 					.fxsmpl.txt.c p{text-align:center;}
-					.fxsmpl.txt.jcc p{justify-content:center;}
-					.fxsmpl.txt.aic p{align-items:center;}
+					/*.fxsmpl.txt.jcc p{-webkit-box-pack:center;justify-content:center;}*/
+					/*.fxsmpl.txt.aic p{-webkit-box-align:center;align-items:center;}*/
 					.fxsmpl.txt.nofx p{display: block}
 					.fxsmpl.txt.nofx span{display: block}
-					.fxsmpl.psd2 p::before,
-					.fxsmpl.psd2 p::after{display:block;border:10px solid DarkSeaGreen;flex:1 1 auto;padding:10px;white-space:pre;}
-					.fxsmpl.psd2 p::before{content:"before\A hoge";}
-					.fxsmpl.psd2 p::after{content:"after";}
 					</style>
 	</head>
 
@@ -105,8 +99,8 @@
 					<p><a href="https://twitter.com/a_t">@a_t</a></p>
 				</section>
 
-				<section>
-					<div class="fx p02">
+				<section class="p02">
+					<div class="fx ex jcc">
 						<div>
 							<h2>box</h2>
 							<p>iOS ~6<br>
@@ -131,9 +125,9 @@
 
 				</section>
 
-				<section>
+				<section class="p01">
 					<h2>関連プロパティ</h2>
-					<div class="fx p01">
+					<div class="fx ex jcc">
 						<div>
 							<h2>box</h2>
 							<ul>
@@ -190,15 +184,15 @@
 					</div>
 				</section>
 
-				<section>
-					<div class="fx p03">
-						<div>
+				<section class="p03">
+					<div class="fx jcs">
+						<div class="fx aic jcc">
 							<h3>Flexboxの宣言</h3>
 							<p>display:flex<br>
 							<small style="color:#aaa">display:flexbox<br>
 							display:box</small></p>
 						</div>
-						<div>
+						<div class="fx aic jcc">
 							<h3>縦横の揃え</h3>
 							<p>align-items<br>
 							<small style="color:#aaa">flex-align<br>
@@ -208,7 +202,7 @@
 							<small style="color:#aaa">flex-pack<br>
 							box-pack</small></p>
 						</div>
-						<div>
+						<div class="fx aic jcc">
 							<h3>幅の拡張</h3>
 							<p>flex<br>
 							<small style="color:#aaa">box-flex</small></p>
@@ -474,9 +468,9 @@ li{
 				</section>
 
 
-				<section>
-					<div class="fx p03">
-						<div>
+				<section class="p03">
+					<div class="fx jcs">
+						<div class="fx aic jcc">
 							<h3>Flexboxの宣言</h3>
 							<p>display:flex<br>
 							<small style="color:#aaa">display:flexbox<br>
